@@ -11,7 +11,7 @@ import {MatTableDataSource} from '@angular/material/table';
     export class AppComponent implements  OnInit  {
       @ViewChild(MatPaginator) paginator: MatPaginator;
       dataSource = new MatTableDataSource();
-      displayColumns = ['id', 'from', 'to'];
+      displayColumns = ['id', 'from', 'to', 'name'];
       form: FormGroup =  new FormGroup({ 'dates': new FormArray([]) });
 
       constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) { }
@@ -29,7 +29,8 @@ import {MatTableDataSource} from '@angular/material/table';
       addRow() {
         const row = new FormGroup({
           from: new FormControl(null),
-          to: new FormControl(null)
+          to: new FormControl(null),
+          name: new FormControl(null)
         });
         this.dateFormArray.push(row);
         this.dataSource.data =  this.dateFormArray.controls;
