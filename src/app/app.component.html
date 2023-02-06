@@ -1,8 +1,8 @@
 <form [formGroup]="form">
-  <table mat-table [dataSource]="dataSource" formArrayName="dates">
+  <table mat-table [dataSource]="dataSource" formArrayName="TableForm">
     <!-- Row definitions -->
     <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
-    <tr mat-row *matRowDef="let row; let i = index; columns: displayColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
 
     <!-- Column definitions -->
      <ng-container matColumnDef="id">

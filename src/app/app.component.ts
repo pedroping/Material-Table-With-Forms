@@ -12,7 +12,7 @@ import {MatTableDataSource} from '@angular/material/table';
       @ViewChild(MatPaginator) paginator: MatPaginator;
       dataSource = new MatTableDataSource();
       displayColumns = ['id', 'from', 'to', 'name'];
-      form: FormGroup =  new FormGroup({ 'dates': new FormArray([]) });
+      form: FormGroup =  new FormGroup({ 'TableForm': new FormArray([]) });
 
       constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) { }
 
@@ -23,7 +23,7 @@ import {MatTableDataSource} from '@angular/material/table';
       }
 
       get dateFormArray():FormArray {
-        return this.form.get('dates') as FormArray;
+        return this.form.get('TableForm') as FormArray;
       }
 
       addRow() {
